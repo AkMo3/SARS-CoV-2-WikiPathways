@@ -1,31 +1,21 @@
 name: Store Changed Files
+description: 'Returns changed GPML file name'
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+outputs:
+  changed_gpml_file_name:
+    description: "Name of new RDF file genereted"
+    value: ${{ steps.changes.outputs.gpml }}
 
-  workflow_dispatch:
-
-jobs:
-  changedfiles:
-    runs-on: ubuntu-latest
-    outputs:
-      gpml: ${{ steps.changes.outputs.gpml }}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Get changed files
-        id: changes
-        run: |
-          echo "::set-output name=gpml::$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep .gpml$ | xargs)"
-  check_results:
-    runs-on: ubuntu-latest
-    needs: changedfiles
-    steps:
-      - name: Check results
-        run: |
-          echo ${{needs.changedfiles.outputs.gpml}}
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Get changed files
+      id: changes
+      run: |
+        echo "::set-output name=gpml::$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep .gpml$ | xargs)"
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+      shell: bash
