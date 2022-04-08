@@ -18,7 +18,7 @@
     <Graphics CenterX="3281.012658227848" CenterY="1408.2697744566044" Width="167.08860759493666" Height="86.84764095430228" ZOrder="32768" FontSize="36" Valign="Middle"/>
     <Xref Database="Uniprot-TrEMBL" ID="E9PGT3"/>
   </DataNode>
-  <DataNode TextLabel="TERF2IP" GraphId="b459a" Type="GeneProduct" GroupRef="afeab">
+  <DataNode TextLabel="TERF2I" GraphId="b459a" Type="GeneProduct" GroupRef="afeab">
     <BiopaxRef>f50</BiopaxRef>
     <Graphics CenterX="3400.005596127968" CenterY="1608.9129633157" Width="161.57205240174608" Height="74.23580786026173" ZOrder="32768" FontSize="36" Valign="Middle"/>
     <Xref Database="Ensembl" ID="ENSG00000166848"/>
