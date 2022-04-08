@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: foo
-        uses:  AkMo3/WikiPathway-composite-actions/changed-files@v1.1
+        uses:  AkMo3/WikiPathway-composite-actions/changed-files@v1.2
       - run: echo random-number ${{ steps.foo.outputs.changed_gpml_file_name }}
         shell: bash
  
