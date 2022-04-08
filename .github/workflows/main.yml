@@ -27,5 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: foo2
-        uses:  AkMo3/WikiPathway-composite-actions/gpml2rdf@v1.3 
+        uses:  AkMo3/WikiPathway-composite-actions/gpml2rdf@v1.3
+        with:
+          file-name: ${{ steps.foo.outputs.changed_gpml_file_name }}
  
