@@ -16,9 +16,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: foo
-        uses:  AkMo3/WikiPathway-composite-actions/changed-files@v1.2
+        uses:  AkMo3/WikiPathway-composite-actions/changed-files@v1.3
       - name: Changed Files
         if: ${{ steps.foo.outputs.changed_gpml_file_name }}
         run: echo changed file ${{ steps.foo.outputs.changed_gpml_file_name }}
         shell: bash
+  convert-gpmp-rdf:
+    runs-on: ubuntu-latest
+    name: Convert GPML to RDF files (incomplete impl)
+    steps:
+      - uses: actions/checkout@v3
+      - id: foo2
+        uses:  AkMo3/WikiPathway-composite-actions/gpml2rdf@v1.3 
  
