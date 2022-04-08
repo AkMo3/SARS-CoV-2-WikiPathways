@@ -13,13 +13,19 @@ jobs:
   get_changed_files:
     runs-on: ubuntu-latest
     name: Get changed GPML files
+    outputs:
+      gpml-files: ${{ steps.getFiles.outputs.gpml-files }}
     steps:
       - uses: actions/checkout@v3
       - id: foo
         uses:  AkMo3/WikiPathway-composite-actions/changed-files@v1.3
-      - name: Changed Files
+      - name: Show Changed Files
         if: ${{ steps.foo.outputs.changed_gpml_file_name }}
         run: echo changed file ${{ steps.foo.outputs.changed_gpml_file_name }}
+        shell: bash
+      - name: Set output files
+        if:  ${{ steps.foo.outputs.changed_gpml_file_name }}
+        run: echo "::set-output name=gpml-files::${{ steps.foo.outputs.changed_gpml_file_name }}"
         shell: bash
   convert-gpmp-rdf:
     runs-on: ubuntu-latest
