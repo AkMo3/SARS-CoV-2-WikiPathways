@@ -1,0 +1,32 @@
+name: Store Changed Files
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  changedfiles:
+    runs-on: ubuntu-latest
+    outputs:
+      gpml: ${{ steps.changes.outputs.gpml }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: 'master'
+      - name: Get changed files
+        id: changes
+        run: |
+          echo "::set-output name=gpml::$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep .gpml$ | xargs)"
+  check_results:
+    runs-on: ubuntu-latest
+    needs: changedfiles
+    steps:
+      - name: Check results
+        run: |
+          echo ${{needs.changedfiles.outputs.gpml}}
