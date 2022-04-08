@@ -24,6 +24,7 @@ jobs:
   convert-gpmp-rdf:
     runs-on: ubuntu-latest
     name: Convert GPML to RDF files (incomplete impl)
+    needs: get_changed_files
     steps:
       - uses: actions/checkout@v3
       - id: foo2
