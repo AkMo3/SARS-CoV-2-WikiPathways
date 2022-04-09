@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  get_changed_files:
+  check-changed-gpml:
     runs-on: ubuntu-latest
     name: Get changed GPML files
     outputs:
@@ -31,4 +31,11 @@ jobs:
         uses:  AkMo3/WikiPathway-composite-actions/gpml2rdf@v1.3
         with:
           file-name: ${{ steps.foo.outputs.changed_gpml_file_name }}
- 
+      - uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            **Curation Report Link: **
+            🌏
+            !
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
