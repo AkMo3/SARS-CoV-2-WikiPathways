@@ -6,7 +6,7 @@
     <Graphics CenterX="86.31287970838414" CenterY="430.509113001215" Width="111.82867557715674" Height="25.0" ZOrder="28672" FontSize="12" Valign="Middle" ShapeType="None" />
     <Xref Database="" ID="" />
   </DataNode>
-  <DataNode TextLabel="Neurodevelopmental&#xA;disorders" GraphId="e1533" Type="Pathway">
+  <DataNode TextLabel="Neurodevelopmentel&#xA;disorders" GraphId="e1533" Type="Pathway">
     <Graphics CenterX="226.45018226002384" CenterY="59.643074119076516" Width="125.19441069258805" Height="41.66160388821384" ZOrder="28672" FontSize="12" Valign="Middle" ShapeType="None" />
     <Xref Database="" ID="" />
   </DataNode>
