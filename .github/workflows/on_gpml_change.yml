@@ -38,4 +38,4 @@ jobs:
             🌏
             !
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: 'github-actions[bot]
+          repo-token-user-login: 'github-actions[bot]'
