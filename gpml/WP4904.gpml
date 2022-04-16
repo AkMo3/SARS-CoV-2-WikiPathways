@@ -19,7 +19,7 @@
     <Graphics CenterX="224.6913730255162" CenterY="392.56379100850467" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" />
     <Xref Database="Ensembl" ID="ENSG00000124225" />
   </DataNode>
-  <DataNode TextLabel="Ebola virus&#xA;pathway in host" GraphId="b8756" Type="Pathway">
+  <DataNode TextLabel="Ebola Virus&#xA;pathway in host" GraphId="b8756" Type="Pathway">
     <Graphics CenterX="504.98116646415497" CenterY="154.79434993924653" Width="117.9040097205347" Height="30.726002430133686" ZOrder="32768" FontWeight="Bold" FontSize="12" Valign="Middle" ShapeType="RoundedRectangle" Color="14961e" />
     <Xref Database="WikiPathways" ID="WP4217" />
   </DataNode>

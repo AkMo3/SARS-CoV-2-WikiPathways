@@ -15,7 +15,7 @@
     <Graphics CenterX="195.00000000000028" CenterY="166.66666666666637" Width="140.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle" Color="0000ff"/>
     <Xref Database="ChEBI" ID="CHEBI:2719"/>
   </DataNode>
-  <DataNode TextLabel="SARS-CoV-2 spike" GraphId="cfddc" Type="Protein">
+  <DataNode TextLabel="SARS-CoV-2 Spike" GraphId="cfddc" Type="Protein">
     <Graphics CenterX="230.0" CenterY="61.749999999999744" Width="124.0" Height="30.5" ZOrder="32768" FillColor="ffcccc" FontSize="12" Valign="Middle" ShapeType="Oval"/>
     <Xref Database="Uniprot-TrEMBL" ID="P0DTC2"/>
   </DataNode>
